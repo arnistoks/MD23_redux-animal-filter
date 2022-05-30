@@ -16,6 +16,10 @@ export const animalsSlice = createSlice({
       state.animals = [...state.animals, action.payload];
       localStorage.setItem('animals', JSON.stringify(state.animals));
     },
+    clearAnimals: (state) => {
+      state.animals = [];
+      localStorage.setItem('animals', JSON.stringify(state.animals));
+    },
     addSpecies: (state, action) => {
       const checkSpecies = state.species.find((e) => e === action.payload);
       if (!checkSpecies) {
@@ -39,7 +43,7 @@ export const animalsSlice = createSlice({
 });
 
 export const {
-  addAnimals, addSpecies, filterSpecies, changeHidden,
+  addAnimals, addSpecies, filterSpecies, changeHidden, clearAnimals,
 } = animalsSlice.actions;
 
 export default animalsSlice.reducer;

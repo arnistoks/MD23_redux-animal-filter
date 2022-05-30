@@ -6,13 +6,15 @@ import Form from '../../components/Form/Form';
 import Button from '../../components/Buttons/Button';
 import '../../components/Form/form.scss';
 import { AppDispatch, RootState } from '../../store/store';
-import { changeHidden, filterSpecies } from '../../store/reducers/animalsSlice';
+import { changeHidden, clearAnimals, filterSpecies } from '../../store/reducers/animalsSlice';
 
 const HomePage = () => {
   const speciesItems = useSelector((state: RootState) => state.speciesItems.species);
   const animalsItems = useSelector((state: RootState) => state.animalsItems.animals);
   const hiddenMode = useSelector((state: RootState) => state.hiddenMode.hidden);
   const dispatch = useDispatch<AppDispatch>();
+
+  // const uniqueSpecies = animalsItems
 
   return (
     <section className="section">
@@ -61,7 +63,7 @@ const HomePage = () => {
             && (
             <Button
               name="Clear All Animals"
-              onClick={() => { localStorage.clear(); window.location.reload(); }}
+              onClick={() => { dispatch(clearAnimals()); }}
             />
             )}
       </div>

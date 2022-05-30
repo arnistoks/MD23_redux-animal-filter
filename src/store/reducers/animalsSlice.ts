@@ -26,7 +26,6 @@ export const animalsSlice = createSlice({
     },
     filterSpecies: (state, action) => {
       const allAnimals = JSON.parse(localStorage.getItem('animals') || '[]') as Animal[];
-      console.log(allAnimals);
       if (action.payload === 'all') {
         state.animals = allAnimals;
       } else {

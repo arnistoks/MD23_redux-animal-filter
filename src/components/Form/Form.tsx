@@ -8,14 +8,11 @@ import { addSpecies, addAnimals, changeHidden } from '../../store/reducers/anima
 
 const Form = () => {
   const speciesItems = useSelector((state: RootState) => state.speciesItems.species);
-  const animalsItems = useSelector((state: RootState) => state.animalsItems.animals);
-  const hiddenMode = useSelector((state: RootState) => state.hiddenMode.hidden);
   const [inputValueName, setInputValueName] = useState('');
   const [inputValueImage, setInputValueImage] = useState('');
   const [inputValueSpecies, setInputValueSpecies] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
   const [hiddenAddNewSpecies, setHiddenAddNewSpecies] = useState(true);
-  const [hidden] = useState(true);
   const dispatch = useDispatch<AppDispatch>();
 
   return (

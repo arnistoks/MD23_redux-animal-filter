@@ -1,0 +1,45 @@
+img {
+  border-radius: 10px;
+  max-height: 200px;
+}
+
+.card {
+  width: 100%;
+  max-width: 340px;
+  height: 350px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  margin: 0;
+  color: #594312;
+  text-shadow: 2px 2px #fecc01;
+  text-align: center;
+}
+
+.species {
+  font-size: 20px;
+  padding-top: 5px;
+  margin: 0;
+  color: #fecc01;
+}

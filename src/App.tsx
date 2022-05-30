@@ -1,27 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import {
+  BrowserRouter as Router, Routes, Route, NavLink,
+} from 'react-router-dom';
+import Logo from './images/logo.png';
+import HomePage from './pages/HomePage/HomePage';
+import TranslationsPage from './pages/TranslationsPage/TranslationsPage';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit
-        {' '}
-        <code>src/App.tsx</code>
-        {' '}
-        and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <Router>
+      <header className="header">
+        <div
+          className="logo__left"
+        >
+          <img src={Logo} alt="Logo" width="150" />
+        </div>
+        <nav className="navigation">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? 'link link--active' : 'link')}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/translations"
+            className={({ isActive }) => (isActive ? 'link link--active' : 'link')}
+          >
+            Translations
+          </NavLink>
+        </nav>
+        <div
+          className="logo__right"
+        >
+          <img src={Logo} alt="Logo" width="150" />
+        </div>
+      </header>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/translations" element={<TranslationsPage />} />
+      </Routes>
+    </Router>
   </div>
 );
 

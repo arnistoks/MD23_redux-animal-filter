@@ -1,0 +1,57 @@
+.covering-panel {
+  background: rgba(0,0,0, 0.7);  // opaque black
+  height: 100vh;                 // height of the viewport
+  position: fixed;               // always cover the screen
+  top: 0;
+  left: 0;
+  width: 100%;                   // width of the viewport
+  z-index: 30;                   // stay on top of other elements
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__container {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.input {
+  font-size: 20px;
+  padding: 10px 15px;
+  width: 360px;
+}
+
+.select {
+  font-size: 20px;
+  padding: 10px 15px;
+  width: 360px;
+  cursor: pointer;
+}
+
+.addSpecies__button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
